@@ -1,0 +1,41 @@
+# How to BUILD
+# YOU MUST GO TO next.config.js & READ LINE 10!
+# run script `npm run build`
+# run script `docker build -f Dockerfile.local --platform linux/amd64 -t registry.quadrakaryasantosa.com/seeds-[change-with-your-name]:v0.1 .` Version is incremental. DON'T FORGET TO INCREMENTAL THE VERSION!
+# run script `docker push registry.quadrakaryasantosa.com/seeds-[change-with-your-name]:v0.1`
+# you already build docker image with name registry.quadrakaryasantosa.com/seeds-[change-with-your-name]:v0.1
+
+# how to DEPLOY
+# go to https://portainer.quadrakaryasantosa.com/ & login with your account
+## if there's no container running
+### click Add container
+### fill Name with seeds-[your-name]
+### select Registry & change to quadra-registry
+### fill Image with copy docker image name without domain in line 5 ex.(seeds-dion:v0.1)
+### click (+ publish a new network port)
+### fill host with your assigned port
+### fill container with 3000
+### then click Deploy the container
+## if you already create container
+### click at the container name
+### click Duplicate/Edit button
+### change Image name with your new image name
+
+FROM node:18-alpine
+LABEL author="asb"
+
+WORKDIR /app
+
+# if you use npm, comment `COPY yarn.lock ./`, uncomment `COPY package-lock.json ./`
+COPY yarn.lock ./
+# COPY package-lock.json ./
+COPY node_modules ./node_modules
+COPY public ./public
+COPY next.config.js ./
+
+COPY .next/standalone ./
+COPY .next/static ./.next/static
+
+EXPOSE 3000
+
+CMD ["node", "server.js"]

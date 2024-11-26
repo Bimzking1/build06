@@ -1,0 +1,31 @@
+import React from 'react';
+
+const NotificationIcon: React.FC = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="32"
+    height="32"
+    viewBox="0 0 32 32"
+    fill="none"
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M15.9984 3.35419C10.0861 3.35419 7.51716 8.70784 7.51716 12.2469C7.51716 14.892 7.90066 14.1136 6.43653 17.3402C4.64859 21.9383 11.8384 23.8177 15.9984 23.8177C20.1572 23.8177 27.347 21.9383 25.5603 17.3402C24.0962 14.1136 24.4797 14.892 24.4797 12.2469C24.4797 8.70784 21.9095 3.35419 15.9984 3.35419Z"
+      stroke="#262626"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+
+    <circle cx="24" cy="6.66668" r="5.33333" fill="#5E44FF" />
+    <path
+      d="M19.0766 27.349C17.3509 29.2766 14.6588 29.2994 12.9166 27.349"
+      stroke="#262626"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+export default NotificationIcon;

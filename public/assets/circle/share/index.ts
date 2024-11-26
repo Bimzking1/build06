@@ -1,0 +1,9 @@
+export { default as FacebookShare } from 'public/assets/circle/share/facebook.svg';
+export { default as InstagramShare } from 'public/assets/circle/share/instagramIcon.png';
+export { default as LinkedinShare } from 'public/assets/circle/share/linkedin.svg';
+export { default as MassengerShare } from 'public/assets/circle/share/massenger.svg';
+export { default as NearbyShare } from 'public/assets/circle/share/nearby.svg';
+export { default as TelegramShare } from 'public/assets/circle/share/telegramIcon.png';
+export { default as TiktokShare } from 'public/assets/circle/share/tiktokIcon.png';
+export { default as TwitterShare } from 'public/assets/circle/share/twitter.svg';
+export { default as WhatsappShare } from 'public/assets/circle/share/whatsapp.svg';

@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Poppins:wght@300;400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100%;
+}
+
+#__next {
+  height: 100%;
+}
+
+li.slick-active {
+  width: 20px !important;
+}
+
+body {
+  position: relative;
+  min-height: 100vh !important;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer components {
+  .document-header {
+    @apply flex justify-between items-center px-[80px] mx-auto mb-0 w-full xl:h-[80px] bg-white;
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Start Scrollbar */
+/* Firefox */
+* {
+  scrollbar-width: 10px;
+  scrollbar-color: #7555da #ffffff;
+}
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 999px;
+}
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-radius: 999px;
+}
+*::-webkit-scrollbar-thumb {
+  background: #7555da;
+  border-radius: 999px;
+}
+/* End Scrollbar */
+
+.dc {
+  height: 0.75rem;
+  width: 0.75rem;
+  background-color: #e9e9e9;
+  border-radius: 100%;
+}
+.slick-dots .slick-active {
+  width: 1.7rem;
+}
+
+.slick-dots .slick-active .dc {
+  background-color: #3ac4a0;
+  width: 1.7rem;
+  border-radius: 500px;
+}
+
+.fade-in {
+  animation: fadeIn 1s forwards;
+  animation-delay: 0.2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Start Elastic carousel */
+.container {
+  margin: 10rem 0;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  /* width: 80%; */
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.container h1 {
+  font-size: 35px;
+  color: rgb(120, 117, 117);
+  text-align: center;
+}
+.seperator {
+  width: 100%;
+}
+
+.carousWrapper {
+  width: 100%;
+}
+
+.selected {
+  @apply w-[244px] h-[244px];
+}
+
+.selected img {
+  @apply w-[200px] h-[200px];
+  transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+}
+
+.not-selected {
+  @apply w-[200px] h-[200px];
+}
+
+.not-selected img {
+  @apply w-[160px] h-[160px];
+  transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+}
+
+.carousWrapper {
+  width: 100%;
+}
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  width: 100%;
+  margin: 15px;
+}
+.title {
+  background-color: rgba(4, 4, 4, 0.228);
+  border-radius: 15px;
+}
+.title h3 {
+  padding: 2rem;
+  color: #fff;
+}
+
+.social-sidebar {
+  border: 1px solid var(--neutral-200, #e9e9e9);
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.3) 0%,
+      rgba(255, 255, 255, 0.3) 100%
+    ),
+    linear-gradient(
+      146deg,
+      rgba(255, 255, 255, 0.8) 16.21%,
+      rgba(255, 255, 255, 0) 97%
+    );
+  backdrop-filter: blur(2px);
+}
+
+.social-sidebar-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  align-self: stretch;
+}
+
+.social-sidebar-list a {
+  display: flex;
+  width: 245px;
+  height: 56px;
+  padding-right: 0px;
+  align-items: center;
+  gap: 8px;
+  @apply px-[36px] text-base font-normal;
+}
+
+.social-sidebar-list a.active {
+  background: linear-gradient(90deg, #dcfce4 0%, rgba(237, 227, 254, 0) 100%);
+  font-size: 16px;
+  color: #27a590;
+  font-weight: 600;
+}
+
+.spotlight {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  float: left;
+}
+
+.spotlight:after {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.6);
+}
+/* End Elastic carousel */
+@keyframes fadeBackgroundColor {
+  0% {
+    background-color: #4fe6af0c;
+  }
+  50% {
+    background-color: #4fe6af2f;
+  }
+  100% {
+    background-color: #4fe6af0c;
+  }
+}
+
+@keyframes redFadeBackgroundColor {
+  0% {
+    background-color: #e64f4f0c;
+  }
+  50% {
+    background-color: #e64f4f5a;
+  }
+  100% {
+    background-color: #e64f4f0c;
+  }
+}
+
+.fade-background-color {
+  animation: fadeBackgroundColor 2.5s infinite;
+}
+
+.red-fade-background-color {
+  animation: redFadeBackgroundColor 2.5s infinite;
+}
+
+.widthPDF {
+  width: calc(100vw - 200px);
+}
+
+.MentionInputTextArea textarea {
+  outline: none;
+}
+
+.MentionInputTextArea {
+  position: relative;
+}
+
+.no-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.height-modal {
+  height: calc(100vh - 71px);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #3ac4a0 !important;
+}
+
+h2 {
+  @apply text-xl;
+}
+h3 {
+  @apply text-lg;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.video-container.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background-color: #000;
+  border-radius: 0;
+}
+
+.video-container.fullscreen video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.tnc-seedsplan-custom-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #27a590 #ffffff;
+}
+
+.tnc-seedsplan-custom-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.tnc-seedsplan-custom-scroll::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+.tnc-seedsplan-custom-scroll::-webkit-scrollbar-thumb {
+  background: #27a590;
+  border-radius: 10px;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 1.5em;
+}
+
+ol {
+  list-style-type: decimal;
+  padding-left: 1.5em;
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+.tnc-battle-custom-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #2b598b #ffffff;
+}
+
+.team-battle-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #7555da #ffffff;
+}
+
+
+.watchlist-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #7555da #ffffff;
+}
