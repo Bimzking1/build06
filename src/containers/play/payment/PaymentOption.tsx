@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 'use client';
 // import { useAppSelector } from '@/store/redux/store';
+import { standartCurrency } from '@/helpers/currency';
 import { getUserInfo } from '@/repository/profile.repository';
 import { Radio } from '@material-tailwind/react';
 import Image from 'next/image';
@@ -62,9 +63,9 @@ const PaymentOption = ({
           alt={option?.payment_method}
         />
         <div className="text-[#27A590] text-xs mt-1">
-          {`Admin fee ${userInfo?.preferredCurrency.toUpperCase()} ${
-            option?.admin_fee
-          }`}
+          {`Admin fee ${userInfo?.preferredCurrency.toUpperCase()} ${standartCurrency(
+            option?.admin_fee ?? 0
+          )}`}
         </div>
       </div>
       <Radio
