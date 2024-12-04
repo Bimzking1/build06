@@ -2,6 +2,7 @@
 /* eslint-disable-next-line @typescript-eslint/restrict-plus-operands */
 'use client';
 import SubmitButton from '@/components/SubmitButton';
+import { standartCurrency } from '@/helpers/currency';
 import { getTransactionSummary } from '@/repository/seedscoin.repository';
 import { selectPromoCodeValidationResult } from '@/store/redux/features/promo-code';
 import { Input, Typography } from '@material-tailwind/react';
@@ -166,25 +167,33 @@ const WalletForm = ({
       {renderPhoneInput()}
       <InlineText
         label={'Join Tournament'}
-        value={`${userInfo?.preferredCurrency} ${admissionFee}`}
+        value={`${userInfo?.preferredCurrency ?? 'IDR'} ${standartCurrency(
+          admissionFee ?? 0
+        )}`}
         className="mb-2"
       />
       {showOtherFees && (
         <>
           <InlineText
             label={t(`${translationId}.serviceFeeLabel`)}
-            value={`${userInfo?.preferredCurrency} ${payment.service_fee}`}
+            value={`${userInfo?.preferredCurrency ?? 'IDR'} ${standartCurrency(
+              payment.service_fee ?? 0
+            )}`}
             className="mb-2"
           />
           <InlineText
             label={t(`${translationId}.adminFeeLabel`)}
-            value={`${userInfo?.preferredCurrency} ${adminFee}`}
+            value={`${userInfo?.preferredCurrency ?? 'IDR'} ${standartCurrency(
+              adminFee ?? 0
+            )}`}
             className="mb-2"
           />
           {payment.is_promo_available ? (
             <InlineText
               label={t(`${translationId}.adminFeeDiscountLabel`)}
-              value={`- ${userInfo?.preferredCurrency} ${payment.promo_price}`}
+              value={`${
+                userInfo?.preferredCurrency ?? 'IDR'
+              } ${standartCurrency(payment.promo_price ?? 0)}`}
               className="mb-2"
             />
           ) : null}
@@ -193,20 +202,26 @@ const WalletForm = ({
       {promoCodeValidationResult ? (
         <InlineText
           label={t(`${translationId}.promoCodeDiscountLabel`)}
-          value={`- ${userInfo?.preferredCurrency} ${newPromoCodeDiscount}`}
+          value={`${userInfo?.preferredCurrency ?? 'IDR'} ${standartCurrency(
+            newPromoCodeDiscount ?? 0
+          )}`}
           className="mb-2"
         />
       ) : null}
       {coinsDiscount > 0 && (
         <InlineText
           label={t(`${translationId}.seedsCoin`)}
-          value={`- ${userInfo?.preferredCurrency} ${coinsDiscount}`}
+          value={`${userInfo?.preferredCurrency ?? 'IDR'} ${standartCurrency(
+            coinsDiscount ?? 0
+          )}`}
           className="mb-2"
         />
       )}
       <hr />
       <Typography className="text-3xl text-[#3AC4A0] font-semibold text-right my-6">
-        {`${userInfo?.preferredCurrency} ${totalFee}`}
+        {`${userInfo?.preferredCurrency ?? 'IDR'} ${standartCurrency(
+          totalFee ?? 0
+        )}`}
       </Typography>
       <hr />
       <SubmitButton

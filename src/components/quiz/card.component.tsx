@@ -1,3 +1,4 @@
+import { standartCurrency } from '@/helpers/currency';
 import { isGuest } from '@/helpers/guest';
 import type { IQuiz } from '@/utils/interfaces/quiz.interfaces';
 import { ShareIcon } from '@heroicons/react/24/outline';
@@ -68,10 +69,9 @@ const QuizCard = ({ item, currency }: { item: IQuiz; currency: string }) => {
                 <div className="font-semibold text-[10.71px]">
                   {item.admission_fee === 0
                     ? t('quiz.free')
-                    : item.admission_fee.toLocaleString('id-ID', {
-                        currency: currency?.length > 0 ? currency : 'IDR',
-                        style: 'currency'
-                      })}
+                    : `${currency ?? 'IDR'}${standartCurrency(
+                        item.admission_fee ?? 0
+                      )}`}
                 </div>
               </div>
               <div>
