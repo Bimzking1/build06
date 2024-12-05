@@ -4,6 +4,7 @@ import FirstMedal from '@/assets/play/quiz/Medal-1.svg';
 import SecondMedal from '@/assets/play/quiz/Medal-2.svg';
 import ThirdMedal from '@/assets/play/quiz/Medal-3.svg';
 import SubsequentMedal from '@/assets/play/quiz/Medal-4-10.svg';
+import { standartCurrency } from '@/helpers/currency';
 import { type IDetailQuiz } from '@/utils/interfaces/quiz.interfaces';
 import Image from 'next/image';
 import React from 'react';
@@ -52,10 +53,9 @@ const QuizWinnerSection: React.FC<QuizWinnerProps> = ({
                     : `${i + 1}th`}
                 </td>
                 <td className="border p-3 w-full">
-                  {item?.toLocaleString('id-ID', {
-                    currency: preferredCurrency ?? 'IDR',
-                    style: 'currency'
-                  })}
+                  {`${preferredCurrency ?? 'IDR'}${standartCurrency(
+                    item ?? 0
+                  )}`}
                 </td>
               </tr>
             ))}

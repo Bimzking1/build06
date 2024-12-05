@@ -181,7 +181,7 @@ const Section2: React.FC<props> = ({ userInfo }): React.ReactElement => {
                     </h1>
                     <h1 className="text-[31px] lg:text-base border-2 border-dashed p-2 border-[#FFFFFF] font-semibold text-[#FFFFFF] rounded">
                       {userInfo?.preferredCurrency ?? 'IDR'}{' '}
-                      {playDetail?.prize[0]}
+                      {standartCurrency(playDetail?.prize[0] ?? 0)}
                     </h1>
                   </div>
                 </div>
@@ -195,7 +195,7 @@ const Section2: React.FC<props> = ({ userInfo }): React.ReactElement => {
                     </h1>
                     <h1 className="text-[19px] lg:text-sm font-semibold text-[#262626]">
                       {userInfo?.preferredCurrency ?? 'IDR'}{' '}
-                      {playDetail?.prize[1]}
+                      {standartCurrency(playDetail?.prize[1] ?? 0)}
                     </h1>
                   </div>
                   <div className="border border-[#E9E9E9] shadow w-1/2 py-2 px-2 md:px-3 mt-2 justify-center text-center border-1 rounded-lg bg-white">
@@ -207,7 +207,7 @@ const Section2: React.FC<props> = ({ userInfo }): React.ReactElement => {
                     </h1>
                     <h1 className="text-[19px] lg:text-sm font-semibold text-[#262626]">
                       {userInfo?.preferredCurrency ?? 'IDR'}{' '}
-                      {playDetail?.prize[2]}
+                      {standartCurrency(playDetail?.prize[2] ?? 0)}
                     </h1>
                   </div>
                 </div>{' '}
@@ -237,7 +237,7 @@ const Section2: React.FC<props> = ({ userInfo }): React.ReactElement => {
                   </h1>
                   <h1 className="text-[31px] lg:text-base border-2 border-dashed p-2 border-[#FFFFFF] font-semibold text-[#FFFFFF] rounded">
                     {userInfo?.preferredCurrency ?? 'IDR'}{' '}
-                    {playDetail?.prize[0]}
+                    {standartCurrency(playDetail?.prize[0] ?? 0)}
                   </h1>
                 </div>
               </div>
@@ -251,7 +251,7 @@ const Section2: React.FC<props> = ({ userInfo }): React.ReactElement => {
                   </h1>
                   <h1 className="text-[19px] lg:text-sm font-semibold text-[#262626]">
                     {userInfo?.preferredCurrency ?? 'IDR'}{' '}
-                    {playDetail?.prize[1]}
+                    {standartCurrency(playDetail?.prize[1] ?? 0)}
                   </h1>
                 </div>
                 <div className="border border-[#E9E9E9] shadow w-1/2 py-2 px-2 md:px-3 mt-2 justify-center text-center border-1 rounded-lg bg-white">
@@ -263,7 +263,7 @@ const Section2: React.FC<props> = ({ userInfo }): React.ReactElement => {
                   </h1>
                   <h1 className="text-[19px] lg:text-sm font-semibold text-[#262626]">
                     {userInfo?.preferredCurrency ?? 'IDR'}{' '}
-                    {playDetail?.prize[2]}
+                    {standartCurrency(playDetail?.prize[2] ?? 0)}
                   </h1>
                 </div>
               </div>{' '}
@@ -320,7 +320,7 @@ const Section2: React.FC<props> = ({ userInfo }): React.ReactElement => {
                 </div>
                 <h1 className="text-xl font-semibold mt-2 text-[#262626]">
                   {userInfo?.preferredCurrency ?? 'IDR'}{' '}
-                  {standartCurrency((playerData?.asset ?? 0))}
+                  {standartCurrency(playerData?.asset ?? 0)}
                 </h1>
                 <h3 className="text-xs mt-2 text-[#7C7C7C]">
                   {t('homepage.section2.text2')}:{' '}
@@ -458,7 +458,7 @@ const Section2: React.FC<props> = ({ userInfo }): React.ReactElement => {
                     </h1>
                     <h1 className="text-[31px] lg:text-base border-2 border-dashed p-2 border-[#FFFFFF] font-semibold text-[#FFFFFF] rounded">
                       {userInfo?.preferredCurrency ?? 'IDR'}{' '}
-                      {playDetail?.prize[0]}
+                      {standartCurrency(playDetail?.prize[0] ?? 0)}
                     </h1>
                   </div>
                 </div>
@@ -472,7 +472,7 @@ const Section2: React.FC<props> = ({ userInfo }): React.ReactElement => {
                     </h1>
                     <h1 className="text-[19px] lg:text-sm font-semibold text-[#262626]">
                       {userInfo?.preferredCurrency ?? 'IDR'}{' '}
-                      {playDetail?.prize[1]}
+                      {standartCurrency(playDetail?.prize[1] ?? 0)}
                     </h1>
                   </div>
                   <div className="border border-[#E9E9E9] shadow-md w-1/2 py-2 px-3 mt-2 justify-center text-center border-1 rounded-lg bg-white">
@@ -484,7 +484,7 @@ const Section2: React.FC<props> = ({ userInfo }): React.ReactElement => {
                     </h1>
                     <h1 className="text-[19px] lg:text-sm font-semibold text-[#262626]">
                       {userInfo?.preferredCurrency ?? 'IDR'}{' '}
-                      {playDetail?.prize[2]}
+                      {standartCurrency(playDetail?.prize[2] ?? 0)}
                     </h1>
                   </div>
                 </div>{' '}
